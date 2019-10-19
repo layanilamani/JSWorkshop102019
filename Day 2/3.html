@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        var students_in_workshop = [
+                {
+                    id:1,
+                    name:"ali",
+                    email:"ali@gmail.com"
+                },{
+                    id:2,
+                    name:"bilal",
+                    email:"bilal@gmail.com"
+                },{
+                    id:3,
+                    name:"zia",
+                    email:"zia@gmail.com"
+                }
+        ];
+
+        function FillList() {
+
+            var result = document.getElementById('result');
+
+            for (var i = 0; i < students_in_workshop.length; i++) {
+                result.innerHTML += "<tr><td>"+
+                 students_in_workshop[i].id 
+                +"</td><td>" + students_in_workshop[i].name+ 
+                "</td><td>"+students_in_workshop[i].email+"</td></tr>" ;   
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="FillList()">
+    
+    <table border="1" style="width: 100%;">
+        <thead>
+            <tr><th>Id</th><th>Name</th><th>Email</th></tr>
+        </thead>
+        <tbody id="result">
+            
+        </tbody>
+    </table>
+</body>
+
+</html>

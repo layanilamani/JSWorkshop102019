@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+        function FillList() {
+            var students_in_workshop = ["ali", "umar", "atif"];
+
+            // for(var i=0; i < 10; i++)
+            // {
+            //     alert('ali');
+            // }
+            var ul = document.getElementById('friends');
+
+
+            for (var i = 0; i < students_in_workshop.length; i++) {
+                ul.innerHTML += "<li>" + students_in_workshop[i]  + "</li>";
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="FillList()">
+    
+    <ul id="friends">
+        
+    </ul>
+</body>
+
+</html>
