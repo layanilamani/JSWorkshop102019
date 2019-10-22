@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+     
+</head>
+<body>
+
+    <TABLE border="1" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>                
+            </tr>
+        </thead>
+        <tbody id="result">
+            
+        </tbody>
+
+    </TABLE>
+
+<script>
+         
+        var users = [{id:1, name:"ali", email: "ali@gmaillc.om", age:20},
+            {id:2, name:"bilal", email: "bilal@gmaillc.om"},
+            {id:3, name:"mujahid", email: "mujahid@gmaillc.om", age:21}
+        ];
+
+        var tbody = document.getElementById('result');
+
+        do
+        {
+            alert('hi');
+        }
+        while(1>10)
+
+        for(var i=0;i<users.length;i++)
+        {
+               tbody.innerHTML += "<tr> <td>"+users[i].id+"</td><td>"+users[i].name+
+                                    "</td><td>"+ (users[i].age == undefined ?  "" : users[i].age)  +"</td><td>"+users[i].email
+                                    +"</td> </tr>";
+        }
+   
+    </script>
+
+
+</body>
+</html>
