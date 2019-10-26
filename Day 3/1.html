@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <script type="text/html" id="template1">
+        <tr><td><img onclick="ShowPlayer('{{videourl}}')" src="{{imagename}}" style='width: 150px;'</td>
+            <td>{{title}}</td>
+            <td>{{album}}</td>
+            <td>{{releasedate}}</td>
+        </tr>
+    </script>
+    <script>
+        var songs = [
+            {
+                id: 1, title: "Aadat", album: "Jal Pari", releasedate: 2004,
+                pic: "220px-Jal_Pari_Atif_aslam_cover.jpg", videolink: "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4"
+            },
+            {
+                id: 2, title: "Aadat", album: "meri kahani", releasedate: 2006,
+                pic: "Meri Kahani_52205.jpg", videolink: "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4"
+            },
+            {
+                id: 3, title: "rabba sachiyan", album: "doorie", releasedate: 2008,
+                pic: "hqdefault.jpg", videolink: "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4"
+            }
+        ];
+
+        function ShowPlayer(videosource) {
+            var videocontainer =  document.getElementById('playercontainer');
+            videocontainer.style.display = "block";
+            
+            var video = videocontainer.children[0];
+            video.src = videosource;
+            video.play();            
+            
+            var v1 = document.createElement('video');
+
+        }
+
+        function search(keyword) {
+
+            if (event.key == "Enter") {
+
+                keyword = keyword.toLowerCase();
+                var result = document.getElementById('result');
+                result.innerHTML = "";
+                
+                var template1 = document.getElementById('template1').innerHTML;
+                var html = "";
+                for (var i = 0; i < songs.length; i++) {
+                    if (songs[i].title.toLowerCase().indexOf(keyword) > -1 ||
+                        songs[i].album.toLowerCase().indexOf(keyword) > -1 ||
+                        songs[i].releasedate == keyword
+                    ) {
+                        html  += template1
+                                .replace('{{imagename}}', songs[i].pic)
+                                .replace('{{videourl}}', songs[i].videolink);
+                    }
+                }
+
+                result.innerHTML = html;
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" onkeyup="search(this.value)" />
+
+    <table border="1" style="width: 100%;">
+        <tbody id="result">
+
+        </tbody>
+
+
+    </table>
+    <div id="playercontainer" style="display: none;">
+        <video src='' id="v1" />
+        <img/ >
+        <button>
+            
+        </button>
+    </div>
+</body>
+
+</html>
