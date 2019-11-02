@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="useracount.js"></script>
+
+    <script>
+        function register() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            var status = signup(name, email, password);
+
+            if (status == true) {
+                window.location.href = "signin.html";
+                //alert('registration succesful');
+                //document.getElementById('message').innerHTML = "Registaration sucessful, please login now.";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td><a href="index.html">Home</a> </td>
+            <td>
+                <a href="signup.html">Signup</a>
+            </td>
+            <td>
+                <a href="Signin.html">Signin</a>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        Name: <input type="text" id="name" value="" /> <br />
+        Email: <input type="email" id="email" value="" /><br />
+        Password: <input type="Password" id="password" value="" /><br />
+        <button onclick="register()">
+            Sign up
+        </button>
+    </div>
+</body>
+</html>

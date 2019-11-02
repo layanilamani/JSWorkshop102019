@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="useracount.js"></script>
+    <script>
+        function ChangeSignin() {
+            if (IsUserLoggedIn()) {
+                var link = document.getElementById('signoutlink');
+                link.style.display = "block";
+            }
+            else {
+                var link = document.getElementById('signinlink');
+                link.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body onload="ChangeSignin()">
+    <table><tr>
+        <td><a href="index.html">Home</a> </td>
+       <td>
+           <a href="signup.html">Signup</a>
+       </td>
+       <td>
+
+           <a id="signinlink" style="display:none" href="Signin.html">Signin</a>
+           <a id="signoutlink" style="display:none" >Signout</a>
+
+       </td>
+        </tr>
+    </table>
+</body>
+</html>
