@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        #numeric_pager a
+        {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        var students = [
+            { Id: 1, Name: "ali", Semester: "CPISM" },
+            { Id: 2, Name: "bilal", Semester: "DISM" },
+            { Id: 3, Name: "casim", Semester: "CPISM" },
+            { Id: 4, Name: "dany", Semester: "HDSEI" },
+            { Id: 5, Name: "eel", Semester: "DISM" },
+            { Id: 6, Name: "faiz", Semester: "DISM" },
+            { Id: 7, Name: "galal", Semester: "CPISM" },
+            { Id: 8, Name: "halal", Semester: "HDSEI" },
+            { Id: 9, Name: "imtiaz", Semester: "CPISM" },
+            { Id: 10, Name: "jhon", Semester: "DISM" },
+            { Id: 11, Name: "kami", Semester: "CPISM" }
+        ];
+        
+        var totalrecords = students.length; //11
+        var pagesize = 3;
+        var totalpages = Math.ceil(totalrecords / pagesize); //4
+
+
+        function ShowRecords(start, end) {
+            createPaging();
+           
+            var result = document.getElementById('result');
+            result.innerHTML = "";
+            for (var i = start; i < end; i++) {
+                result.innerHTML += "<tr><td>" + students[i].Id + "</td><td>" + students[i].Name + "</td><td>" + students[i].Semester + "</td></tr>";
+            }
+           
+        }
+
+        function createPaging() {
+
+            var pager = document.getElementById('numeric_pager');
+            pager.innerHTML = "";
+            var start = 0;
+            var end = start + pagesize;
+            for (var i = 1; i <=  totalpages; i++)
+            {                
+                pager.innerHTML += "<a onclick='ShowRecords("+start+","+end+")' >" +  i+ "</a> ";
+
+                start += 3;  
+                end = start + pagesize;                            
+            }
+        }
+
+
+    </script>
+</head>
+
+<body onload="ShowRecords(0, 3)">
+    <label>Search</label>
+    <input type="text" id="keyword" />
+
+    <table border="1" style="width: 100%">
+        <tbody id="result">
+
+        </tbody>
+
+
+    </table>
+    <div id="pager">
+        <span><a href=""> Previous</a></span>
+
+        <span id="numeric_pager">
+
+
+
+
+        </span>
+
+        <span><a href=""> Next </a>
+
+        </span>
+    </div>
+</body>
+
+</html>
