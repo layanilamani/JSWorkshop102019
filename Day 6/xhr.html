@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        function LoadData() {
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('Get', 'https://api.coindesk.com/v1/bpi/currentprice.json');
+
+            xhr.onload = function () {
+                var bitcoindata =   JSON.parse( xhr.response);                
+                
+                document.querySelector('h1').innerHTML = bitcoindata.bpi.USD.rate_float;
+            };
+
+            xhr.send();            
+        }
+    </script>
+</head>
+
+<body onload="LoadData()">
+    <h1></h1>
+</body>
+
+</html>
