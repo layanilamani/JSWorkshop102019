@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $($('button')[0]).click(function () {
+                 
+                $('h1').show();
+            });
+
+            $($('button')[1]).click(function () {
+                 
+                $('h1').hide();
+            });
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>JS Workshops</h1>
+    <h2 class="day" id="day6">Day 6</h2>
+    <h2 class="day">Day 7</h2>
+    <h2 class="day">Day 8</h2>
+    <button>
+        Show H1
+    </button>
+    <button>
+        Hide H1
+    </button>
+
+</body>
+
+</html>
